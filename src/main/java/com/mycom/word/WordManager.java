@@ -12,7 +12,7 @@ public class WordManager {
 
 
 
-    public int selectMenu(){
+    public int selectMenu(){                      //메뉴 선택 창
         System.out.print("***영단어 마스터***\n"
                 + "*******************\n"
                 + "1. 모든 단어 보기\n"
@@ -24,15 +24,18 @@ public class WordManager {
                 + "7. 파일 저장\n"
                 + "0. 나가기\n"
                 + "******************\n"
-                + "--> 원하는 메뉴는?");
-        return s.nextInt(); //원하는 메뉴 입력받기
+                + "--> 원하는 메뉴의 번호를 입력해주세요");
+        return s.nextInt();                      //원하는 메뉴 입력받기
     }
 
     public void start() {
         while(true) {
             int menu = selectMenu();
             System.out.println(menu);
-            if(menu == 0) break;
+            if(menu == 0) {
+                System.out.print("영단어마스터 프로그램이 종료되었습니다.");
+                break;
+            }
             if(menu == 4) {
                 wordCRUD.addWord();
             }
