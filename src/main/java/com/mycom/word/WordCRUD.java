@@ -50,11 +50,11 @@ public class WordCRUD implements ICRUD{
 
     public void listAll() {                                       //1. 모든 단어 보기
         System.out.println(" 1. 모든 단어 보기 (레벨 / 영단어 / 뜻)");
-        System.out.println("--------------------");
+        System.out.println("---------------------");
         for(int i = 0; i < list.size(); i++){
             System.out.print(i+1 + "번째 단어: " + " ");
             System.out.println(list.get(i).toString());
         }
-        System.out.println("--------------------\n\n");
+        System.out.println("---------------------\n\n");
     }
 }
