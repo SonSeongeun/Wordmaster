@@ -45,9 +45,11 @@ public class WordManager {
             else if(menu == 1){                  //모든 단어 보기
                 wordCRUD.listAll();
             }
-            else if(menu == 2){
+            else if(menu == 2){                  //수준 별 단어 보기
                 wordCRUD.searchLevel();
-
+            }
+            else if(menu == 3){                  //단어 검색
+                wordCRUD.searchWord();
             }
             else if(menu == 5){                  //단어 수정
                 wordCRUD.updateItem();
