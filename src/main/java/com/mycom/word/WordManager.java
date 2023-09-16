@@ -29,6 +29,9 @@ public class WordManager {
     }
 
     public void start() {
+
+        wordCRUD.loadFile();                     //파일 실행 전 저장된 데이터 읽어오기
+
         while(true) {
             int menu = selectMenu();
             System.out.println(menu);
@@ -47,6 +50,9 @@ public class WordManager {
             }
             else if(menu == 6){                  //단어 삭제
                 wordCRUD.deliteItem();
+            }
+            else if(menu == 7) {                 //단어 저장
+                wordCRUD.saveFile();
             }
         }
     }
