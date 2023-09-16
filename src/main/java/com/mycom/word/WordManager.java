@@ -32,16 +32,21 @@ public class WordManager {
         while(true) {
             int menu = selectMenu();
             System.out.println(menu);
-            if(menu == 0) {
+            if(menu == 0) {                      //프로그램 종료
                 System.out.print("영단어마스터 프로그램이 종료되었습니다.");
                 break;
             }
-            if(menu == 4) {
+            if(menu == 4) {                      //단어 추가
                 wordCRUD.addWord();
             }
-            else if(menu == 1){
+            else if(menu == 1){                  //모든 단어 보기
                 wordCRUD.listAll();
-
+            }
+            else if(menu == 5){                  //단어 수정
+                wordCRUD.updateItem();
+            }
+            else if(menu == 6){                  //단어 삭제
+                wordCRUD.listAll();
             }
         }
     }

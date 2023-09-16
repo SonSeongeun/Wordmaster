@@ -16,7 +16,7 @@ public class WordCRUD implements ICRUD{
     @Override
     public Object add() {                                       //4. 단어 추가
         System.out.println(" 4. 단어 추가");
-        System.out.print("--> 난이도(1,2,3) & 추가 할 단어 입력 : ");
+        System.out.print("--> 난이도 입력 (1,2,3) & 추가 할 단어 입력 : ");
         int level = s.nextInt();
         String word = s.nextLine();
 
@@ -56,5 +56,40 @@ public class WordCRUD implements ICRUD{
             System.out.println(list.get(i).toString());
         }
         System.out.println("---------------------\n\n");
+    }
+
+    public ArrayList<Integer> listAll(String keyword) {            //1. 모든 단어 보기
+
+        ArrayList<Integer> idlist = new ArrayList<>();
+
+        int j = 0;
+
+        System.out.println(" 1. 모든 단어 보기 (레벨 / 영단어 / 뜻)");
+        System.out.println("---------------------");
+        for(int i = 0; i < list.size(); i++){
+            String word = list.get(i).getWord();
+            if(!word.contains(keyword)) continue;
+            System.out.print(j+1 + " ");
+            System.out.println(list.get(i).toString());
+            idlist.add(i);
+            j++;
+        }
+        System.out.println("---------------------\n\n");
+        return idlist;
+    }
+
+    public void updateItem() {
+        System.out.print("--> 수정할 단어 검색: ");
+        String keyword = s.next();
+        ArrayList<Integer> idlist = this.listAll(keyword);
+        System.out.print("--> 수정할 번호 선택 : ");
+        int id = s.nextInt();
+        s.nextLine();
+
+        System.out.print("--> 뜻 입력 : ");
+        String meaning = s.nextLine();
+        Word word = list.get(idlist.get(id-1));
+        word.setMeaning(meaning);
+        System.out.println("단어가 수정되었습니다. ");
     }
 }
